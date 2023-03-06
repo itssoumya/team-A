@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technocolabs Software Project</title>
+    <link rel="stylesheet"  type='text/css' href="{% static 'style.css' %}">
+</head>
+
+<body>
+  <div class="container">
+    <div class="content">
+      <form action="{% url 'result' %}" method="POST">
+        {% csrf_token %}
+        <div class="title">BONDORA FINANCIAL RISK MODELLING PROJECT</div>
+        <div class="user-details">
+
+            <div class="input-box">
+                <span class="details">Interest And Penalty Balance</span>
+                <input type="number" step='any' required name="ipb">
+              </div>
+
+              <div class="input-box">
+                
+                <span class="details">Principal Balance</span>
+                <input type="number" step='any' required name="balance">
+              </div>
+
+              <div class="input-box">
+                <span class="details">Loss Given Default</span>
+                <input type="number" step='any' required name="loss" >
+              </div>
+
+              <div class="input-box">
+                
+                <span class="details">Monthly Payment</span>
+                <input type="number" step='any' required name="payment">
+              </div>
+
+              <div class="input-box">
+                
+                <span class="details">Amount</span>
+                <input type="number" step='any' required name="amount">
+              </div>
+
+              <div class="input-box">
+                
+                <span class="details">Interest</span>
+                <input type="number" step='any' required name="interest">
+              </div>
+
+              <div class="input-box">
+                
+                <span class="details">Age</span>
+                <input type="number"  required name="age">
+              </div>
+
+              <div class="input-box">
+                
+                <span class="details">Loan Duration (in months)</span>
+                <input type="number"  required name="duration">
+              </div>
+
+          <div class="input-box">
+            <span class="details">Employment status</span>
+             <select required name="employment" id="employment">
+                <option value=""></option>
+                <option value=1>Fully employed</option>
+                <option value=0>Entrepreneur</option>
+                <option value=3>Retiree</option>
+                <option value=4>Self-employed</option>
+                <option value=2>Partially employed</option>
+                <option value=6>Others</option>
+             </select>
+          </div> 
+        </div>
+        <div class="button">
+          <input type="submit" value="Predict">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
